@@ -79,26 +79,5 @@ public class Conta {
 	public void setAutenticado(boolean autenticado) {
 		this.autenticado = autenticado;
 	}
-
-	public boolean login(String login, String senha){
-		if(this.login == login){
-			if(this.senha == senha){
-				setAutenticado(true);
-				return true;
-			}
-			else{
-				System.out.println("Erro ao efetuar login: senha incorreta.");
-			}
-		}
-		else{
-			System.out.println("Erro ao efetuar login: o login é inválido.");
-		}
-		setAutenticado(false);
-		return false;
-	}
-	
-	public void logout(){
-		setAutenticado(false);
-	}
 	
 }

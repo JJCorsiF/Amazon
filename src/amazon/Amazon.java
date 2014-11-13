@@ -78,8 +78,31 @@ public class Amazon {
 			System.out.println("O carrinho está vazio.");
 		}
 	}
+	
+	public void login(String login, String senha){
+		for(Conta conta : contas){
+			if(conta.getLogin() == login){
+				if(conta.getSenha() == senha){
+					conta.setAutenticado(true);
+					contaLogada = conta;
+					break;
+				}
+				else{
+					System.out.println("Falha na autenticação: senha incorreta.");
+				}
+			}
+		}
+	}
+	
+	public void logout(){
+		if(contaLogada != null){
+			contaLogada.setAutenticado(false);
+			contaLogada = null;
+		}
+	}
 
 	public static void main(String[] args) {
+		Amazon loja = new Amazon();
 		//Requisitos que faltam:
 		//sobreescrita de método (chamar dentro do método da classe) - usar o @override
 		//Diagrama de classes no astah e arquivo .png

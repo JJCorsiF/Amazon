@@ -2,12 +2,22 @@ package amazon;
 
 public class Produto {
 	
+	protected Categoria categoria;
 	protected String descricao;
 	protected double preco;
 	
-	public Produto(String descricao, double preco){
+	public Produto(Categoria categoria, String descricao, double preco){
+		setCategoria(categoria);
 		setDescricao(descricao);
 		setPreco(preco);
+	}
+	
+	public Categoria getCategoria(){
+		return categoria;
+	}
+	
+	public void setCategoria(Categoria categoria){
+		this.categoria = categoria;
 	}
 
 	public double getPreco() {
