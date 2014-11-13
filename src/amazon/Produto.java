@@ -1,10 +1,16 @@
 package amazon;
 
-public class Produto {
+public abstract class Produto {
 	
 	protected Categoria categoria;
 	protected String descricao;
 	protected double preco;
+        
+    public Produto(String descricao, double preco){
+		setDescricao(descricao);
+		setPreco(preco);
+        setCategoria(Categoria.OUT);
+	}
 	
 	public Produto(Categoria categoria, String descricao, double preco){
 		setCategoria(categoria);
@@ -35,5 +41,7 @@ public class Produto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+        
+    public abstract void mostrarInformacoes();
 	
 }

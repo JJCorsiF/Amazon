@@ -33,7 +33,7 @@ public class Conta {
 	}
 	
 	public void setLogin(String login) {
-		if(isAutenticado()){
+		if(isAutenticado() || this.login.equals("")){
 			if((login.length() > 5 && login.length() < 21)){
 				this.login = login;
 			}
@@ -51,7 +51,7 @@ public class Conta {
 	}
 	
 	public void setSenha(String senha) {
-		if(isAutenticado()){
+		if(isAutenticado() || this.senha.equals("")){
 			if(senha.length() > 5 && senha.length() < 16){
 				this.senha = senha;
 			}

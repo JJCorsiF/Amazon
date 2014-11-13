@@ -85,6 +85,7 @@ public class Amazon {
 				if(conta.getSenha() == senha){
 					conta.setAutenticado(true);
 					contaLogada = conta;
+                    System.out.println("Logado como " + contaLogada.getUsuario().getNome() + ".");
 					break;
 				}
 				else{
@@ -103,11 +104,18 @@ public class Amazon {
 
 	public static void main(String[] args) {
 		Amazon loja = new Amazon();
-		//Requisitos que faltam:
-		//sobreescrita de método (chamar dentro do método da classe) - usar o @override
-		//Diagrama de classes no astah e arquivo .png
-		//Método static a ser chamado no main
-		//Usar todas as classes no main
+        System.out.println("Loja Amazon. CNPJ " + Amazon.CNPJ + ".");
+        DVD dvd = new DVD(Categoria.FIC, "J.R.R. Tolkien", "The Lord of the Rings: The Return of the King", 60.0);
+        Livro livro = new Livro(Categoria.FIC, "J.K. Rowling", "Harry Potter and the Deathly Hallows", 45.0);
+        Conta user1 = new Conta("Usuario", "login1", "senha1");
+        loja.contas.add(user1);
+        loja.carrinho.add(dvd);
+        loja.carrinho.add(livro);
+        setQuantidadeClientes(loja.contas.size());
+        loja.mostrarCarrinho();
+        livro.mostrarInformacoes();
+        dvd.mostrarInformacoes();
+        loja.login("login1", "senha1");
 	}
 	
 }
