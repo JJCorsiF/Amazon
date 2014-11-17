@@ -29,7 +29,7 @@ public class DVD extends Produto {
 		this.tipo = tipo;
 	}
 	
-    @override
+    @Override
     public String getDescricao() {
 		return "DVD " + descricao;
 	}
